@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "804847302745",
+    "firebase_url": "https://iamwatchingyou-aa347.firebaseio.com",
+    "project_id": "iamwatchingyou-aa347",
+    "storage_bucket": "iamwatchingyou-aa347.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804847302745:android:bd44f9a43006e7bf",
+        "android_client_info": {
+          "package_name": "com.bignerdranch.android.iamwatchingyou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "804847302745-d2vgvhaklesina3tu3mbl6vviij6p46u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bignerdranch.android.iamwatchingyou",
+            "certificate_hash": "e16ba3f8fecdf855a15e52298bc006f1f64234b1"
+          }
+        },
+        {
+          "client_id": "804847302745-j8t17dqg5f2v4jii1dak3lpffbi16gbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD275scL7FhWnEYj1DsnHn-1xU8IP3ZXjU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "804847302745-j8t17dqg5f2v4jii1dak3lpffbi16gbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
