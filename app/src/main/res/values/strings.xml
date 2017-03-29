@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">IamWatchingYou</string>
+    <string name="corseLocation_access_denied">You will not be able to use this app if you don\'t
+    give us access to your location.</string>
+    <string name="indoortatlas_api_key">asd</string>
+    <string name="indooratlas_api_secret">asd</string>
+</resources>
