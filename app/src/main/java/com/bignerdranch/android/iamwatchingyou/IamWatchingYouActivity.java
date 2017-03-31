@@ -2,6 +2,7 @@ package com.bignerdranch.android.iamwatchingyou;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -38,19 +39,18 @@ public class IamWatchingYouActivity extends AppCompatActivity {
          * the reason we require this permission to the user. If the method returns true
          * then we throw a toast to the user explaining the reason we need coarse location.
          */
-
-        if(ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.ACCESS_COARSE_LOCATION)) {
-            Toast.makeText(IamWatchingYouActivity.this,
-                    R.string.corseLocation_access_denied, Toast.LENGTH_SHORT)
-                    .show();
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if(!doWheHavePermission()) {
+                requestCoarseLocationPermission();
+            } else {
+                mLocationManager = IALocationManager.create(this);
+            }
         } else {
-            String[] myPermissions = {
-                    Manifest.permission.ACCESS_COARSE_LOCATION
-            };
-            ActivityCompat.requestPermissions(this, myPermissions, CODE_PERMISSIONS);
+
+            mLocationManager = IALocationManager.create(this);
 
         }
+        
     }
 
     @Override
