@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86' , 'armeabi-v7a'
+            universalApk true
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
@@ -10,6 +18,11 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        packagingOptions {
+            exclude 'META-INF/LICENSE'
+            exclude 'META-INF/LICENSE-FIREBASE.txt'
+            exclude 'META-INF/NOTICE'
+        }
     }
     buildTypes {
         release {

@@ -3,6 +3,7 @@ package com.bignerdranch.android.iamwatchingyou;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -50,17 +51,22 @@ public class IamWatchingYouActivity extends AppCompatActivity {
             mLocationManager = IALocationManager.create(this);
 
         }
-        
+
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
-                                           String[] permissions, int[] grantResults)
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults)
     {
        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_DENIED ) {
-            //user denied access
-            //take action. toast and then -> stop working.
+            if(ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.ACCESS_COARSE_LOCATION)) {
+                Toast.makeText(IamWatchingYouActivity.this, R.string.corseLocation_access_denied,
+                        Toast.LENGTH_SHORT)
+                        .show();
+            }
         } else {
 
             //access granted by the user we can create our manager
