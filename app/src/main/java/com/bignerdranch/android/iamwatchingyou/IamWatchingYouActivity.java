@@ -3,6 +3,7 @@ package com.bignerdranch.android.iamwatchingyou;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -111,5 +112,20 @@ public class IamWatchingYouActivity extends AppCompatActivity {
     protected void onDestroy() {
         mLocationManager.destroy();
         super.onDestroy();
+    }
+
+
+    private boolean doWheHavePermission() {
+        if(ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_COARSE_LOCATION) ==
+                PackageManager.PERMISSION_GRANTED) {
+            return true;
+        }
+        return false;
+    }
+
+    private void requestCoarseLocationPermission() {
+        ActivityCompat.requestPermissions(this, new String[]
+                {Manifest.permission.ACCESS_COARSE_LOCATION}, CODE_PERMISSIONS);
     }
 }
