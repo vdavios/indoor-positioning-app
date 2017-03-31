@@ -66,6 +66,8 @@ public class IamWatchingYouActivity extends AppCompatActivity {
                 Toast.makeText(IamWatchingYouActivity.this, R.string.corseLocation_access_denied,
                         Toast.LENGTH_SHORT)
                         .show();
+            } else {
+                //fragment call
             }
         } else {
 
@@ -103,7 +105,12 @@ public class IamWatchingYouActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        mLocationManager.requestLocationUpdates(IALocationRequest.create(), mLocationListener);
+        if (!doWheHavePermission()) {
+            // fragment
+        } else {
+            mLocationManager.requestLocationUpdates(IALocationRequest.create(), mLocationListener);
+        }
+
     }
 
     @Override
