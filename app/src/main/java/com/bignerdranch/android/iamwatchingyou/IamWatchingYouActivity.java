@@ -26,7 +26,7 @@ public class IamWatchingYouActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.); fetch map from indoor atlas
+        setContentView(R.layout.activity_iam_watching_you);
         myFb = new Firebase(Fb_URL);
         //Our singleton object with the points of interest
         pointsOfInterest = PositionContainer.getInstance();
