@@ -4,29 +4,19 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical">
-    <vasilis.davios
+
+
+    <com.bignerdranch.android.iamwatchingyou.BlueDotView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
-
-    <LinearLayout
+    <Button
+        android:id="@+id/GoToSettings_button"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_gravity="bottom"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/GoToSettings_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:backgroundTint="#ffaa00"
-            android:text="@string/no_access_button" />
-    </LinearLayout>
-
-
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:backgroundTint="#ffaa00"
+        android:text="@string/no_access_button" />
 
 
 </LinearLayout>
