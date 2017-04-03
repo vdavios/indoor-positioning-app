@@ -6,10 +6,6 @@
     android:orientation="vertical">
 
 
-    <com.bignerdranch.android.iamwatchingyou.BlueDotView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
     <Button
         android:id="@+id/GoToSettings_button"
         android:layout_width="match_parent"
@@ -17,6 +13,12 @@
         android:visibility="invisible"
         android:backgroundTint="#ffaa00"
         android:text="@string/no_access_button" />
+
+    <com.bignerdranch.android.iamwatchingyou.BlueDotView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 
 
 </LinearLayout>
