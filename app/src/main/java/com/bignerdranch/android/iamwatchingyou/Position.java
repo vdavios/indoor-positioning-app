@@ -56,6 +56,12 @@ public class Position {
         return false;
 
     }
+    //Created for saving separately in our database
+    public double getLatitude() {
+        return latitude;
+    }
 
-
+    public double getLongitude() {
+        return longitude;
+    }
 }

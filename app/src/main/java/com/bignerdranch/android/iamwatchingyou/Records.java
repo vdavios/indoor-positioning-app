@@ -11,4 +11,12 @@ public class Records {
         usersCurrentPosition = position;
         this.time = time;
     }
+
+    public Position getUsersCurrentPosition() {
+        return usersCurrentPosition;
+    }
+
+    public long getTime() {
+        return time;
+    }
 }
