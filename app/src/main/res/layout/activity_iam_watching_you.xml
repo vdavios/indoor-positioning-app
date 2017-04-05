@@ -4,14 +4,10 @@
     android:layout_height="match_parent">
 
 
-    <Button
-        android:id="@+id/GoToSettings_button"
+    <com.bignerdranch.android.IamWatchingYou.BlueDotView
+        android:id="@+id/floorPlanView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:layout_gravity="top"
-        android:backgroundTint="#ffaa00"
-        android:text="@string/no_access_button" />
+        android:layout_height="match_parent"/>
 
 
 </LinearLayout>
