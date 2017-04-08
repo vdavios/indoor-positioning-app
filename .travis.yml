@@ -1,6 +1,10 @@
 language: android
 jdk:
-  - oraclejdk7
+  - oraclejdk8
+env:
+  global:
+  - ANDROID_TARGET=android-24
+  - ANDROID_ABI=armeabi-v7a
 
 android:
   components:
@@ -8,8 +12,8 @@ android:
     - tools
     - platform-tools
     - build-tools-25.0.2
-    - android-22
-    - sys-img-armeabi-v7a-android-22
+    - android-25
+    - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
     - sys-img-x86-android-25
     - extra-google-google_play_services
     - extra-google-m2repository
@@ -20,7 +24,7 @@ sudo: required    
 install: true  
 
 before_script:
-  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
   - emulator -avd test -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
