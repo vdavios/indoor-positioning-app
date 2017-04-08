@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:weightSum="1">
 
+    <TextView
 
-    <com.bignerdranch.android.IamWatchingYou.BlueDotView
-        android:id="@+id/floorPlanView"
+        android:id="@+id/textView"
+        android:layout_width="425dp"
+        android:layout_height="521dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.96"
+        android:background="@android:color/background_light"
+        android:gravity="center"
+        android:text="@string/WelcomeMessage"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/Button"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        android:text="@string/FetchFloorPlan"
+        android:textColor="@android:color/white"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:textStyle="bold"/>
 
 
 </LinearLayout>
