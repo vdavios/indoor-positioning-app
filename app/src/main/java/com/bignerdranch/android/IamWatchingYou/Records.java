@@ -22,6 +22,7 @@ public class Records {
         this.mFirebaseRef.push().setValue(this);
     }
 
+
     public double getLatitude() {
         return latitude;
     }
