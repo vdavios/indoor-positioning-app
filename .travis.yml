@@ -25,6 +25,8 @@ install: true
 
 script:
   - sudo apt-get update && sudo apt-get install oracle-java8-installer
-  - android update sdk --no-ui --filter build-tools-24.0.2,android-24,extra-android-m2repository
+  - echo y | android update sdk --no-ui --filter build-tools-24.0.2 
+  - echo y |  android update sdk --no-ui --filter android-24
+  - echo y | android update sdk --no-ui --filter extra-android-m2repository
   - java -version
   - ./gradlew connectedAndroidTest
