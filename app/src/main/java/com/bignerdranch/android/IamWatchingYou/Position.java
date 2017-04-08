@@ -14,6 +14,7 @@ public class Position {
         this.longitude = Math.toRadians(longitude);
         this.description = description;
     }
+
     //Created for saving separately in our database
     public double getLatitude() {
         return latitude;
