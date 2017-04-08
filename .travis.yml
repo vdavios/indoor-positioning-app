@@ -29,5 +29,5 @@ script:
   - echo y |  android update sdk --no-ui --filter android-24
   - echo y | android update sdk --no-ui --filter extra-android-m2repository
   - java -version
-  - ./gradlew mobile:build
+  - ./gradlew
 #connectedAndroidTest
