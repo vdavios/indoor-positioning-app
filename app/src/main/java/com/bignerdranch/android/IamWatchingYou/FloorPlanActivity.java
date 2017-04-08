@@ -1,6 +1,5 @@
 package com.bignerdranch.android.IamWatchingYou;
 
-import android.*;
 import android.Manifest;
 import android.app.DownloadManager;
 import android.content.BroadcastReceiver;
@@ -37,6 +36,7 @@ import com.indooratlas.android.sdk.resources.IAResultCallback;
 import com.indooratlas.android.sdk.resources.IATask;
 
 import java.io.File;
+import java.util.List;
 
 public class FloorPlanActivity extends AppCompatActivity {
 
@@ -51,7 +51,7 @@ public class FloorPlanActivity extends AppCompatActivity {
     DatabaseReference myRef = db.getReference("User_Records");
     private final int CODE = 12312;
     private Records mRecord;
-    private PositionContainer pointsOfInterest = PositionContainer.getInstance();
+    private PositioningMethods pointsOfInterest = PositioningMethods.getInstance();
 
     private IALocationManager mLocationManager;
 
@@ -163,16 +163,24 @@ public class FloorPlanActivity extends AppCompatActivity {
 
             //We create an object with user's location and the time to pass to our database
             mRecord = new Records(location.getLatitude(), location.getLongitude(),
-                    location.getTime());
-            //adding a unique id to the objects
-            myRef.push().setValue(mRecord);
-            String pointOfInterest = pointsOfInterest.isNearPointsOfInterest(location.getLatitude(),
+                    location.getTime(), myRef);
+            List <Position> nearbyPointsOfInterest =
+                    pointsOfInterest.isNearPointsOfInterest(location.getLatitude(),
                     location.getLongitude());
 
-           if(!pointOfInterest.equals("")) {
-                Toast.makeText(FloorPlanActivity.this, pointOfInterest, Toast.LENGTH_LONG)
-                        .show();
+            if (nearbyPointsOfInterest.size() > 0 &&
+                    pointsOfInterest.getToastFlag()) {
+                Log.d(TAG, String.valueOf(pointsOfInterest.getToastFlag()));
+                for (Position position: nearbyPointsOfInterest) {
+                    Toast.makeText(FloorPlanActivity.this, position.getDescription(),
+                            Toast.LENGTH_LONG)
+                            .show();
+                }
+                pointsOfInterest.setToastFlag(false);
+                Log.d(TAG, String.valueOf(pointsOfInterest.getToastFlag()));
+
             }
+
             if (mFloorPlanImage != null && mFloorPlanImage.isReady()) {
                 IALatLng latLng = new IALatLng(location.getLatitude(), location.getLongitude());
                 PointF point = mFloorPlan.coordinateToPoint(latLng);
