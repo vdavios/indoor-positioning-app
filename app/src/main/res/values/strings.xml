@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">IamWatchingYou</string>
-    <string name="FetchFloorPlan">Floor Plan</string>
+    <string name="FetchFloorPlan">Begin Tracking</string>
     <string name="Fine_Location_access">I am watching you will not work properly without having access to your location.</string>
     <string name="WelcomeMessage">I am Watching You App\n made by Enric Sera Sanz\n and Vasileios Davios</string>
     <string name="indoortatlas_api_key">b2692f9d-3b5f-4021-9baa-cd3266797846</string>

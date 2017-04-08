@@ -46,7 +46,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.bignerdranch.android.IamWatchingYou.FloorPlanActivity">
+        <activity android:name="com.bignerdranch.android.IamWatchingYou.FloorPlanActivity"
+                  android:configChanges="orientation|screenSize">
+
         </activity>
     </application>
 

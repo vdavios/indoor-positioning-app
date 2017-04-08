@@ -19,7 +19,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.davemorrissey.labs.subscaleview.ImageSource;
@@ -51,8 +50,8 @@ public class FloorPlanActivity extends AppCompatActivity {
     FirebaseDatabase db = FirebaseDatabase.getInstance();
     DatabaseReference myRef = db.getReference("User_Records");
     private final int CODE = 12312;
-    private Position mUsersPosition;
     private Records mRecord;
+    private PositionContainer pointsOfInterest = PositionContainer.getInstance();
 
     private IALocationManager mLocationManager;
 
@@ -69,6 +68,9 @@ public class FloorPlanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_floor_plan);
+        if(savedInstanceState !=null) {
+
+        }
         //Creating a new instance of location manager class to access indoorAtlas services.
         mLocationManager = IALocationManager.create(this);
         mFloorPlanImage = (BlueDotView)findViewById(R.id.floorPlanView);
@@ -164,6 +166,13 @@ public class FloorPlanActivity extends AppCompatActivity {
                     location.getTime());
             //adding a unique id to the objects
             myRef.push().setValue(mRecord);
+            String pointOfInterest = pointsOfInterest.isNearPointsOfInterest(location.getLatitude(),
+                    location.getLongitude());
+
+           if(!pointOfInterest.equals("")) {
+                Toast.makeText(FloorPlanActivity.this, pointOfInterest, Toast.LENGTH_LONG)
+                        .show();
+            }
             if (mFloorPlanImage != null && mFloorPlanImage.isReady()) {
                 IALatLng latLng = new IALatLng(location.getLatitude(), location.getLongitude());
                 PointF point = mFloorPlan.coordinateToPoint(latLng);
@@ -227,9 +236,6 @@ public class FloorPlanActivity extends AppCompatActivity {
                         String filePath = Environment.getExternalStorageDirectory() + "/"
                                 + Environment.DIRECTORY_DOWNLOADS + "/" + fileName;
                         File file = new File(filePath);
-                        //we get this toast
-                        Toast.makeText(FloorPlanActivity.this,filePath,Toast.LENGTH_LONG)
-                                .show();
                         if (!file.exists()) {
                             DownloadManager.Request request =
                                     new DownloadManager.Request(Uri.parse(mFloorPlan.getUrl()));
@@ -243,9 +249,7 @@ public class FloorPlanActivity extends AppCompatActivity {
 
                             mDownloadId = mDownloadManager.enqueue(request);
                         } else {
-                            Toast.makeText(FloorPlanActivity.this, "kai edw",
-                                    Toast.LENGTH_LONG)
-                                    .show();
+
                             showFloorPlanImage(filePath);
                         }
                     } else {
@@ -281,7 +285,6 @@ public class FloorPlanActivity extends AppCompatActivity {
             if (region.getType() == IARegion.TYPE_FLOOR_PLAN) {
                 String id = region.getId();
                 Log.d(TAG, "floorPlan changed to " + id);
-                Toast.makeText(FloorPlanActivity.this, id, Toast.LENGTH_SHORT).show();
                 fetchFloorPlan(id);
             }
         }
@@ -292,4 +295,8 @@ public class FloorPlanActivity extends AppCompatActivity {
         }
 
     };
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+    }
 }

@@ -7,7 +7,8 @@
     <com.bignerdranch.android.IamWatchingYou.BlueDotView
         android:id="@+id/floorPlanView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_gravity="center"/>
 
 
 </LinearLayout>
