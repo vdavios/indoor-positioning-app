@@ -5,11 +5,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by vasileiosDavios on 05/04/2017.
- */
+
 public class PositionTest {
-    Position usersPosition;
+    private Position usersPosition;
     PositioningMethods positioningMethods = PositioningMethods.getInstance();
     @Before
     public void setUp() {
@@ -26,10 +24,7 @@ public class PositionTest {
         assertEquals(Math.toRadians(-0.1300068345539113), usersPosition.getLongitude(), 0);
     }
 
-    @Test
-    public void assesDistanceIsComputedCorrectly() {
-        assertEquals();
-    }
+
 
 
 }
