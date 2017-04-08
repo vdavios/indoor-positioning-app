@@ -10,19 +10,26 @@ import static org.junit.Assert.*;
  */
 public class PositionTest {
     Position usersPosition;
+    PositioningMethods positioningMethods = PositioningMethods.getInstance();
     @Before
-    public void setUp() throws Exception {
-        //usersPosition = new Position(51.52170448542311, -0.1300068345539113);
+    public void setUp() {
+        usersPosition = new Position(51.52170448542311, -0.1300068345539113, "Pos");
     }
 
     @Test
-    public void getLatitude() throws Exception {
-      //  assertEquals(51.52170448542311,usersPosition.getLatitude(), 0);
+    public void getLatitude() {
+        assertEquals(Math.toRadians(51.52170448542311), usersPosition.getLatitude(), 0);
     }
 
     @Test
-    public void getLongitude() throws Exception {
-      //  assertEquals(-0.1300068345539113, usersPosition.getLongitude(), 0);
+    public void getLongitude(){
+        assertEquals(Math.toRadians(-0.1300068345539113), usersPosition.getLongitude(), 0);
     }
+
+    @Test
+    public void assesDistanceIsComputedCorrectly() {
+        assertEquals();
+    }
+
 
 }
