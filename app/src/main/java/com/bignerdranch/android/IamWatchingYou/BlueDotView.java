@@ -50,7 +50,6 @@ public class BlueDotView extends SubsamplingScaleImageView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-
         if (!isReady()) {
             return;
         }

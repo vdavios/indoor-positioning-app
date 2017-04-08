@@ -43,7 +43,6 @@ public class IamWatchingYouActivity extends AppCompatActivity {
         });
     }
 
-
     private boolean doWeHaveAccessToUsersLocation() {
         return (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)

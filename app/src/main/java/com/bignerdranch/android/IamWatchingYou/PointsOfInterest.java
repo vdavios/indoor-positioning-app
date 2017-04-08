@@ -17,6 +17,7 @@ public class PointsOfInterest {
         pointsOfInterest.add(new Position(51.5216929085858,
                 -0.12999587740967156, "first "));
     }
+
     public List<Position> getPointsOfInterest(){
         return pointsOfInterest;
     }
