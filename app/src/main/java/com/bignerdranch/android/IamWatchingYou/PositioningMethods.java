@@ -16,11 +16,6 @@ public class PositioningMethods {
      */
     private static final String TAG = "PositioningMethods";
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> BBK-PiJ-2016-09-debugging
     private static PointsOfInterest pointsOfInterest = PointsOfInterest.getInstance();
     private static PositioningMethods ourInstance = new PositioningMethods();
 

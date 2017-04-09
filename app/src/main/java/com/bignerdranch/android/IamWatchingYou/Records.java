@@ -54,15 +54,12 @@ public class Records {
         this.dbRef.push().setValue(this);
     }
 
-<<<<<<< HEAD
 
-=======
     /**
      * Getter for the latitude.
      *
      * @return The latitude in radians.
      */
->>>>>>> BBK-PiJ-2016-09-debugging
     public double getLatitude() {
         return latitude;
     }
