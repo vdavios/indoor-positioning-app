@@ -5,7 +5,9 @@ import java.lang.Math;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Singleton for positioning calculations and verification.
+ */
 
 public class PositioningMethods {
 
@@ -56,6 +58,7 @@ public class PositioningMethods {
                                 double p2lat,
                                 double p2long) {
 
+        //radius of the sphere
         final int earthRadiusInMeters = 6371009;
         double meanLatitude = (p1lat + p2lat) / 2;
         double deltaLatitude = (p1lat - p2lat);
