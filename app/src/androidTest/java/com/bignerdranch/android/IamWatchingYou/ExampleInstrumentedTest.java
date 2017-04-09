@@ -23,6 +23,5 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.bignerdranch.android.iamwatchingyou", appContext.getPackageName());
 
-        fail("failed as it should");
     }
 }
