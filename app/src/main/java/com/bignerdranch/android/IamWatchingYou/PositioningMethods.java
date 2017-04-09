@@ -11,7 +11,6 @@ public class PositioningMethods {
 
     private static final String TAG = "PositioningMethods";
 
-
     private static PointsOfInterest pointsOfInterest = PointsOfInterest.getInstance();
 
     /**

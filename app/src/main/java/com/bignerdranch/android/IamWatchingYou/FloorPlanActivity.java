@@ -146,6 +146,7 @@ public class FloorPlanActivity extends AppCompatActivity {
 
 
     }
+
     private void locationUpdates() {
         mLocationManager.requestLocationUpdates(IALocationRequest.create()
                 .setFastestInterval(1000), mLocationListener);
