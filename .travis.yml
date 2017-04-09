@@ -46,8 +46,4 @@ before_script:
 
 
 script:
-<<<<<<< HEAD
   - ./gradlew connectedAndroidTest
-=======
-- ./gradlew connectedAndroidTest
->>>>>>> BBK-PiJ-2016-09-debugging
