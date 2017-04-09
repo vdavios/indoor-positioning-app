@@ -32,12 +32,10 @@ public class PositionTest {
     @Test
     public void assesPointsOfInterestAreFound() {
         assertEquals(positioningMethods.isNearPointsOfInterest(51.5216929085858,
-                -0.12999587740967156).size(), 3, 0);
+                -0.12999587740967156, 3).size(), 3, 0);
         assertEquals(positioningMethods.isNearPointsOfInterest(51.5216929085858,
-                -0.12991).size(),0, 0);
+                -0.12991, 3).size(),0, 0);
     }
-    public void distanceIsCalculatedProperly() {
 
-    }
 
 }
