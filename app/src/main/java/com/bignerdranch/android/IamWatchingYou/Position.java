@@ -1,9 +1,8 @@
 package com.bignerdranch.android.IamWatchingYou;
 
 /**
- * A class used to handle any position.
+ * A class used to handle ppositions.
  */
-
 public class Position {
 
     /**
@@ -35,9 +34,9 @@ public class Position {
         this.description = description;
     }
 
-
     /**
      * Getter for latitude.
+     *
      * @return the latitude in radians.
      */
     public double getLatitude() {
@@ -46,6 +45,7 @@ public class Position {
 
     /**
      * Getter for longitude
+     *
      * @return the longitude in radians
      */
     public double getLongitude() {
@@ -54,6 +54,7 @@ public class Position {
 
     /**
      * Getter for the description.
+     *
      * @return the description.
      */
     public String getDescription() {
