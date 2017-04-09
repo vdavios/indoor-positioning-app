@@ -9,6 +9,10 @@ public class PointsOfInterest {
     private static PointsOfInterest instance = new PointsOfInterest();
     private List<Position> pointsOfInterest = new ArrayList<>();
 
+    /**
+     * Stores our list of points of interest.
+     *
+     */
     private PointsOfInterest() {
         pointsOfInterest.add(new Position(51.5216929085858,
                 -0.12999587740967156, "Vasilis toast"));
