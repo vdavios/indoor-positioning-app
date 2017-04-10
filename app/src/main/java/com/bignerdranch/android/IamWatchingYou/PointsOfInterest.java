@@ -14,10 +14,10 @@ public class PointsOfInterest {
      *
      */
     private PointsOfInterest() {
-        pointsOfInterest.add(new Position(51.521815,
-                -0.130188, "Elevator"));
-        pointsOfInterest.add(new Position(51.521807,
-                -0.130199, "Library and bathroom corridor"));
+        pointsOfInterest.add(new Position(51.5218130200724,
+                -0.13019382823249614, "Main Lobby-Elevator"));
+        pointsOfInterest.add(new Position(51.52192292986247,
+                -0.13039357668297738, "Library and Uni-cafeteria corridor"));
         pointsOfInterest.add(new Position(51.522128,
                 -0.130617, "Entrance to extension building."));
     }

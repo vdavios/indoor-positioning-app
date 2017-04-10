@@ -80,14 +80,7 @@ public class FloorPlanActivity extends AppCompatActivity {
             requestWritePermission();
         }
         locationUpdates();
-        /* optional setup of floor plan id
-           if setLocation is not called, then location manager tries to find
-           location automatically */
-       final String floorPlanId = getString(R.string.indooratlas_floor_plan_id);
-       /*  if (!TextUtils.isEmpty(floorPlanId)) {
-            final IALocation location = IALocation.from(IARegion.floorPlan(floorPlanId));
-            mLocationManager.setLocation(location);
-        }*/
+
     }
 
 

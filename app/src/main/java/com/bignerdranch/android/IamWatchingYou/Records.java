@@ -33,7 +33,7 @@ public class Records {
     /**
      * The firebase object to save to.
      */
-    private DatabaseReference mDbRef;
+
     private static final FirebaseDatabase db = FirebaseDatabase.getInstance();
     private static final DatabaseReference dbRef = db.getReference("User_Records");
     /**
@@ -51,7 +51,7 @@ public class Records {
         this.longitude = location.getLongitude();
         this.time = location.getTime();
         // save the record to the database when created.
-        this.dbRef.push().setValue(this);
+        dbRef.push().setValue(this);
     }
 
 
