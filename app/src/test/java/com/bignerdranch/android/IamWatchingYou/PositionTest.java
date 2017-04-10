@@ -29,8 +29,7 @@ public class PositionTest {
     }
 
 
-<<<<<<< HEAD
-=======
+
     @Test
     public void assesPointsOfInterestAreFound() {
         assertEquals(positioningMethods.isNearPointsOfInterest(51.5216929085858,
@@ -38,7 +37,7 @@ public class PositionTest {
         assertEquals(positioningMethods.isNearPointsOfInterest(51.5216929085858,
                 -0.12991, 3).size(),0, 0);
     }
->>>>>>> BBK-PiJ-2016-09-debugging
+
 
 
 }
